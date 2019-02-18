@@ -1,0 +1,14 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::indexAction
+    schemes:    [http, https]
+
+login:
+    path: /login
+    controller: App\Controller\SecurityController::loginAction
+    schemes:    [http, https]
+
+logout:
+    path: /logout
+    controller: App\Controller\SecurityController::logoutAction
+    schemes:    [http, https]

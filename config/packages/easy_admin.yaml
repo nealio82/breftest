@@ -1,0 +1,27 @@
+easy_admin:
+    design:
+        menu:
+            - { label: 'Kitties', entity: 'Kitty', icon: 'paw' }
+            - { label: 'Quotes', entity: 'Quote', icon: 'quote-right' }
+            - { label: 'Homepage', route: 'index', icon: 'home' }
+
+    entities:
+        Kitty:
+            class: App\Entity\Kitty
+            list:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.kitty_images%' }
+                    - name
+            show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.kitty_images%' }
+                    - name
+            form:
+                fields:
+                    - name
+                    - { property: 'imageFile', type: 'vich_image' }
+
+        Quote:
+            class: App\Entity\Quote
+            list:
+                fields: ['kitty', 'quote']

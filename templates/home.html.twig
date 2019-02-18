@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <section id="home" class="h-450 hero">
+        <div class="display-table">
+            <div class="display-table-cell vertical-align-middle">
+
+                <div class="container text-center">
+
+                    <h1 class="m-0 fs-50 fw-300 wow fadeInUp animated" data-wow-delay="0.4s"
+                        style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">{{ heroQuote.quote }}</h1>
+                    <p class="lead font-lato fs-30 wow fadeInUp animated" data-wow-delay="0.7s"
+                       style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">{{ heroQuote.kitty }}</p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="alternate">
+        <div class="container">
+
+            <header class="text-center mb-60">
+                <h2>More Kitty Mewsings</h2>
+                <p class="lead font-lato">Feline ipsum dolor paw amet adipiscium elit</p>
+                <hr>
+            </header>
+
+            <ul class="row clearfix testimonial-dotted list-unstyled">
+
+                {% for quote in quotes %}
+                    {% include 'quote/quote-card.html.twig' %}
+                {% endfor %}
+
+            </ul>
+
+        </div>
+    </section>
+
+{% endblock %}
